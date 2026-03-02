@@ -4,3 +4,10 @@ description: IT Professional
 show_downloads: false
 plugins:
 - jekyll-remote-theme
+
+navigation:
+  - name: Top
+    link: /
+
+  - name: Accessibility Notes for UIC Red
+    link: ./red-accessiblity/
