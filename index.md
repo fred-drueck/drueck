@@ -1,5 +1,6 @@
 ---
-title: Homepage of Faculty Member
+title: Hello Github!
 ---
 
-Welcome to my site.
+Welcome to Fred's empty site.
+
