@@ -26,7 +26,7 @@ The way HTML structures content is by placing it between to tags.  For example `
 
 The ```<p>``` is called a "semantic" tag because it has meaning, it means "this is a paragraph".  Some tags don't have any semantic meaning, they only put structure into the page, which might be used for visual formatting or some other purpose.  Examples of non-semantic tags include ```<div>```,  ```<span>```, and ```<br>```.  The ```<br>``` tag is a non-semantic line break.  It doesn't indicate a semantic reason for why there is a line break, it could be because you want to add space between paragraphs, add space between elements of list, or any myriad number of reasons.  The ```<br>``` tag is used like:
 
-```
+```html
 	This is a line of text<br>And this will appear on a second line of text
 ```
 
@@ -44,13 +44,13 @@ As a general principle, we make design more accessible by writing HTML which is 
 
 
 good:
-```
+```html
 	<p>This is the first paragraph of text</p>
 	<p>This will be a second paragraph of text</p>
 
 ```
 bad:
-```
+```html
 	This is the first paragraph of text<br><br>
 	This looks like a second paragraph of text, but we can only tell by looking at the page visually.
 
@@ -65,7 +65,7 @@ In Red, paragraph breaks should be inserted automatically between text set to th
 
 HTML has tags can be used to organize content into sub-dived sections, often referred to as "headers" since they are written like ```<h1>, <h2>, <h3>```, ... which make pages easier to naviagte using screen readers or other programatic tools;  They also are generally appropriate for seperating out the sections and subsections of page visually.  Here is an example of how to use headers to structure a page:
 
-```
+```html
 	<h1>This is the highest level and in Red sites is set automatically to the page title</h1>
 
 	This heading should be unique, it should be descriptive of the page's content taken as a whole.  In Red pages, the page title is used so you should never use this header manually.
@@ -92,13 +92,13 @@ For the best accessibility (largely because it enables the easiest page navigati
 3. Don't put content in a lower header level unless it is really a sub-section of the that content.
 
 Good:
-```
+```html
 	  <h1>Page Title </h1>
 	  <h2>First Section Title</h2>
 	  <h3>Sub-section Title</h3>
 ```	  
 Bad:
-```
+```html
   	  <h1>Page Title </h1>
 	  <h2>First Section Title</h2>
 	  <h3>Second Section Title</h3>
@@ -106,14 +106,14 @@ Bad:
 4. Conversely, don't put sub-section content in a higher header level to provide visual emphasis to an important sub-section, find some other way to emphasize that content like ```<strong>``` or ```<em>```.
 
 Good:
-```
+```html
 	  <h1>Page Title </h1>
 	  <h2>First Section Title</h2>
 	  <h3>Normal Sub-section Title</h3>
 	  <h3><strong>Important Sub-section Title</strong></h3>
 ```
 Bad:
-```
+```html
   	  <h1>Page Title </h1>
 	  <h2>First Section Title</h2>
 	  <h3>Normal Sub-section Title</h3>
@@ -125,13 +125,13 @@ Note that in the Red "Visual" editor for Text Block components the various heade
 4. Don't use emphasis tags like ```<strong>``` or formatting tags like ```<b>``` to create section divisions that work for visual users but not user's relying on software to navigate the page structure (e.g. screen readers)
 
 Good:
-```
+```html
 	  <h1>Page Title </h1>
 	  <h2>First Section Title</h2>
 	  <h3>Sub-section Title</h3>
 ```
 Bad:
-```
+```html
   	  <strong>PAGE TITLE</strong>
 	  <strong>First Section Title</strong>
 	  <em>Sub-section Title</em>
@@ -141,7 +141,7 @@ Bad:
 5. Header's should accurately describe the content of the page content which they sub-divide.
 
 Good (well not great, but the header part is good and the content is probably OK):
-```
+```html
 	  <h1>Dumb Jokes</h1>
 	  <n2>Chicken Related</h2>
 	  <h3>Why didn't the chicken cross the road?</h3>
@@ -149,7 +149,7 @@ Good (well not great, but the header part is good and the content is probably OK
 	  The other side wasn't accessible
 ```
 Bad:
-```
+```html
 	  <h1>Dumb Jokes</h1>
 	  <h2>Chicken Related<h2>
 	  <h3>Why didn't the chicken cross the road?</h3>
@@ -176,15 +176,15 @@ Let's say for example we want to provide a caption or alt text for:
 ![Professor Lev Reyzin at the chalkboard](lev.avif)
 
 Good:
-```
+```html
 	<im src="lev.avif" alt="A professor gestures at a chalkboard" caption="Professor Lev Reyzin">
 ```
 Bad:
-```
+```html
 	<im src="lev.avif" alt="Professor Lev Reyzin" caption="Professor Lev Reyzin gestures at a chalkboard">
 ```
 Worse:
-```
+```html
 	<im src="lev.avif" alt="Image of Professor Lev Reyzin" caption="Image of Professor Lev Reyzin">
 ```
 
@@ -200,15 +200,15 @@ There a some important things to keep in mind when setting link text to produce 
 A screen reader may read all links on a page when being used to navigate and it will read those links without any context.  To be useful, a link's text must describe the content to which it is linking.
 
 Good:
-```
+```html
 	Please consult <a href="https://www.mozillafoundation.org/en/docs/design/websites/accessibility-guidelines/">Mozilla's web accessibility guidelines</a> for more info on web accessibility.
 ```
 Bad:
-```
+```html
 	Please consult Mozilla's web accessibility guidelines <a href="https://www.mozillafoundation.org/en/docs/design/websites/accessibility-guidelines/">website</a> for more info on web accessibility.
 ```
 Worse:
-```
+```html
 	Please consult <a href="https://www.mozillafoundation.org/en/docs/design/websites/accessibility-guidelines/">this</a> page for more info on web accessibility.
 ```
 (in this case neither visual readers of the page nor screen reader user's know where that link points to without following it)
@@ -216,15 +216,15 @@ Worse:
 2. Screen readers will likely read URL's out letter-by-letter, this may be OK for links to the top-level domain of site but should not be used for link's to sub-pages or when there's a better textual description.
 
 Good:
-```
+```html
     <a href="https://mscs.uic.edu/about/people/faculty-awards/">MSCS department awards</a>
 ```
 OK, not great:
-```
+```html
     <a href="https://mscs.uic.edu/">https://mscs.uic.edu</a>
 ```
 Bad:
-```
+```html
     <a href="https://mscs.uic.edu/about/people/faculty-awards/">https://mscs.uic.edu/about/people/faculty-awards/</a>
 ```
 Note:
@@ -237,18 +237,17 @@ my.uic.edu is now generally linked to as myUIC, using my.UIC.edu as link text is
 If a page element is emphasized only in a visual way, a screen reader cannot possibly hope to indicate that this element is significant.  Visual emphasis by color only may not stand out to colorblind page users (as well as not being of any use to the blind).  It is OK to use, e.g. color to emphasize a page element, but that cannot be the *only way* that page element is emphasized.  Using semantic emphasis tags like ```<strong>``` and ```<em>``` is considered acceptable (though it's not optimal because since these tags are used so commonly many screen readers will not indicate the presence of these tags in their default configuration), since there is no simple, obviously superior alternative so it is acceptable to use these tags to emphasize text.
 
 OK:
-```
-
+```html
 	This is emphasized <strong style="color: red;">semantically and visually</strong>.
 ```
 Bad:
-```
+```html
     This is emphasized <div style="color: red;">visually only</div>.
 ```
 ALL CAPS is problematic not just because it is visual emphasis of text, but because ALL CAPS text is harder to read for dyslexics and may cause screen readers to read the text letter-by-letter.  All caps is appropriate, of course, for abbreviations like MSCS and VIC that *should* by read letter-by-letter and is acceptable for abbreviations like NASA which are not typically read letter-by-letter but are none-the-less abbreviations.
 
 Worse:
-```
+```html
     This is emphasized USING ALL CAPS.
 ```
 
