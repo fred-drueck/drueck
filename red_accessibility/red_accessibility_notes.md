@@ -4,6 +4,8 @@ I would be happy to make an in-person or zoom presentation on this topic, and if
 
 ## Notes specific to Red
 
+The "visual editor" for the page intro text does not offer all of the options offered by the "Text Block" component.  For this reason, you are generally better off using the "Text Block" component instead of the intro text.  *If you do use* the page intro text, you need to set the Subtitle to an appropriate summary of what content is present in the intro page whether or whether not you check the "hide this" box.  Often "intro text" or "about" is an appropriate value for the sub-title.
+
 A personal pet-peeve I have with the design of Red is that it makes it appear as if you can write webpages while understanding *literally* nothing about HTML, which is, unfortunately, not true.  In order to avoid introducing accessibility issues (and to make the best use of the components available in Red) you actually have to know some basics about how HTML works and how you write accessible web pages.  You by no means have to be an expert, but you either have to know a Little bit about these topics or only make a very narrow scope of edits to pages.  When you are in doubt about how to best format information in Red so as to provide it in a way that is accessible, you can consult me, the Red team, or the BIC Digital Accessibility staff for assistance as necessary.  When in doubt, don't hesitate to ask for help!
 
 Red was designed with some opinions about how it would be used to generate and display content.  It is sometimes tempting to try and "pound a round peg into a square hole" so as to do something with a component in Red that it was not really intended to do by the Red design team.  While this might seem to work, it's likely that this might result in accessibility issues because Red components are either accessible when used as intended, or can at least likely be modified by the Red design team to be more accessible when accessibility issues are reported to them.  The red team provides documentation on their components at:
@@ -32,6 +34,8 @@ The Red visual editor provides an option select a subset of tags that you might 
 
 ![red visual editor with the environment selector expanded](red_editor.png)
 
+note that some of the Red components do *not* offer this selector, in particular the page intro text does not offer it and you are generally better off using a "Text Block" component.
+
 ## The gist of Web Accessibility
 
 The fundamental idea of web accessibility is to make webpages as usable as possible for as diverse a group of people as possible.  For example: people with visual impairment may use a screen reader to read and navigate the contents of a page, some people may have a physical impairment that limits their ability to use a mouse and would like to navigate using the keyboard only, someone with dyslexia may have more trouble reading text in ALL CAPS than text written in normal case.  These are only a few examples of the use cases that we try to accommodate via accessible design.
@@ -54,6 +58,8 @@ bad:
 
 Why is the first example more accessible than the first?  The reason is that since the ```<p>``` indicates "these are different paragraphs" and software can then do something with that information.  For example, a visually impaired user may navigate this page using a screen reader that has keyboard shortcuts to skip between paragraphs.  That screen reader may have different short cuts to skip between lines of text.  Furthermore, the screen reader might pause, as a human reader generally would, between different paragraphs of text, but might not pause or pause differently at a line break.  The more semantic information is available to a screen reader or other piece of assistive software, the better that software can present the webpage so as to be easily understandable and navigable by a visitor relying on assistive software.
 
+In Red, paragraph breaks should be inserted automatically between text set to the ```<p>``` tag in the visual editor that is seperated by a line break.
+
 
 ## Well-structured pages vs. visual Formatting
 
@@ -62,11 +68,11 @@ HTML has tags can be used to organize content into sub-dived sections, often ref
 ```
 	<h1>This is the highest level and in Red sites is set automatically to the page title</h1>
 
-	This heading should be unique, it should be descriptive of the page's content taken as a whole
+	This heading should be unique, it should be descriptive of the page's content taken as a whole.  In Red pages, the page title is used so you should never use this header manually.
 
 	<h2>This the first level of sub-division</h2>
 
-	In red sites, this is the component title.  You may choose to hide this, but it will be used by screen readers to navigate the page and, as such, should still be descriptive of whatever content is contained in that component.  You should almost never manually insert an <h2> into your documents because this likely will not be accomplishing the goal of having the component collect related content into a sub-section of a page.
+	In red sites, this is the page component title.  You may choose to hide this, but it will be used by screen readers to navigate the page and, as such, should still be descriptive of whatever content is contained in that component.  You should almost never manually insert an <h2> into your documents because this likely will not be accomplishing the goal of having the component collect related content into a sub-section of a page.
 
 	<h3>This is the third level of sub-division</h3>
 
@@ -182,28 +188,28 @@ Worse:
 	<im src="lev.avif" alt="Image of Professor Lev Reyzin" caption="Image of Professor Lev Reyzin">
 ```
 
-** I had to fix a lot of alt text in Red, many times alt text was simply totally inappropriate however another problem was occasionally that alt text was appropriate for an image that had been used in the past but had since been updated to a different image and was, therefore, no longer appropriate **
+** I had to fix a lot of alt text in Red, many times alt text was simply totally inappropriate however another problem was occasionally that alt text was appropriate for an image that had been used in the past but had since been updated to a different image and was, therefore, no longer appropriate.  When updating an image, be sure to also update the alt text **
 
 
 ## Links
 
 There a some important things to keep in mind when setting link text to produce accessible content.
 
-1. Links should describe there target destination without additional context being required
+1. Links should describe their target destination without additional context being required
 
-A screen reader may read all links on a page when being used to navigate and it will read those links without any context.  To be useful, a link's text must describe the content to which it is link.
+A screen reader may read all links on a page when being used to navigate and it will read those links without any context.  To be useful, a link's text must describe the content to which it is linking.
 
 Good:
 ```
-	Please consult <a href="https://www.mozillafoundation.org/en/docs/design/websites/accessibility-guidelines/">Mozilla's web accessibility guidelines</a> for more info web accessibility.
+	Please consult <a href="https://www.mozillafoundation.org/en/docs/design/websites/accessibility-guidelines/">Mozilla's web accessibility guidelines</a> for more info on web accessibility.
 ```
 Bad:
 ```
-	Please consult Mozilla's web accessibility guidelines <a href="https://www.mozillafoundation.org/en/docs/design/websites/accessibility-guidelines/">website</a> for more info web accessibility.
+	Please consult Mozilla's web accessibility guidelines <a href="https://www.mozillafoundation.org/en/docs/design/websites/accessibility-guidelines/">website</a> for more info on web accessibility.
 ```
 Worse:
 ```
-	Please consult <a href="https://www.mozillafoundation.org/en/docs/design/websites/accessibility-guidelines/">this</a> page for more info web accessibility.
+	Please consult <a href="https://www.mozillafoundation.org/en/docs/design/websites/accessibility-guidelines/">this</a> page for more info on web accessibility.
 ```
 (in this case neither visual readers of the page nor screen reader user's know where that link points to without following it)
 
@@ -228,7 +234,7 @@ my.uic.edu is now generally linked to as myUIC, using my.UIC.edu as link text is
 
 ## Visual Emphasis Only is Bad, ALL CAPS IS EVEN WORSE
 
-If a page element is emphasized only in a visual way, a screen reader cannot possibly hope to indicate that this element is significant.  Visual emphasis by color only may not stand out to colorblind page users (as well as not being of any use to the blind).  It is OK to use, e.g. color to emphasize a page element, but that cannot be the only way to emphasize that page element.  Using semantic emphasis tags like ```<strong>``` and ```<em>``` is considered acceptable (though it's not optimal because since these tags are used so commonly many screen readers will not indicate the presence of these tags in their default configuration), there is no simple, obviously superior alternative so it is acceptable to use these tags to emphasize text.
+If a page element is emphasized only in a visual way, a screen reader cannot possibly hope to indicate that this element is significant.  Visual emphasis by color only may not stand out to colorblind page users (as well as not being of any use to the blind).  It is OK to use, e.g. color to emphasize a page element, but that cannot be the *only way* that page element is emphasized.  Using semantic emphasis tags like ```<strong>``` and ```<em>``` is considered acceptable (though it's not optimal because since these tags are used so commonly many screen readers will not indicate the presence of these tags in their default configuration), since there is no simple, obviously superior alternative so it is acceptable to use these tags to emphasize text.
 
 OK:
 ```
@@ -239,7 +245,7 @@ Bad:
 ```
     This is emphasized <div style="color: red;">visually only</div>.
 ```
-ALL CAPS is problematic not just because it is visual emphasis of text, but because ALL CAPS text is harder to read for dyslexics and may cause screen readers to read the text letter-by-letter.  All caps is appropriate, of course, for abbreviates like MSCS and VIC that *should* by read letter-by-letter and is acceptable for abbreviations like NASA which are not typically read letter-by-letter but are none-the-less abbreviations.
+ALL CAPS is problematic not just because it is visual emphasis of text, but because ALL CAPS text is harder to read for dyslexics and may cause screen readers to read the text letter-by-letter.  All caps is appropriate, of course, for abbreviations like MSCS and VIC that *should* by read letter-by-letter and is acceptable for abbreviations like NASA which are not typically read letter-by-letter but are none-the-less abbreviations.
 
 Worse:
 ```
@@ -251,11 +257,12 @@ Worse:
 
 When your source document looks OK it's tempting to just copy and paste that content into Red to use as is.  However, that is not always going to be a safe thing to do.  Here's some things to watch out for:
 
-1. MS Outlook has this thing it does where it automatically replaces links with a proxy link in emails.  Microsoft can then do some kind of check of the target page before they redirect you to the content, which might catch some kinds of malware and phishing.  However, this can introduce latency when a user clicks a safe-link since Microsoft may do some kind of content check before the direction.  Worse, if the email that contained the safe-link has been deleted, the safe-link proxy link may also cease to exist, resulting in a broken link.  Another problem with these "Safelinks" is that when you look at such a link outside of Microsoft Outlook (either the desktop or web version) you cannot easily tell what URL that link is pointing to without following it (or pasting it into a safelinks decoder tool).  Thus, when copying and pasting hyperlinks out of emails, you will want to replace the link target with the actual destination.  You can do this by first following the safelinks link, then copying and pasting that URL out of the web-browser into the page content you are writing.
+1. MS Outlook has this thing it does where it automatically replaces links with a proxy link in emails.  Microsoft can then do some kind of check of the target page before they redirect you to the content, which might catch some kinds of malware and phishing.  However, this can introduce latency when a user clicks a safe-link since Microsoft may do some kind of content check before the redirection to the final link target.  Worse, if the email that contained the safe-link has been deleted, the safe-link proxy link may also cease to exist, resulting in a broken link.  Another problem with these "Safelinks" is that when you look at such a link outside of Microsoft Outlook (either the desktop or web version) you cannot easily tell what URL that link is pointing to without following it (or pasting it into a safelinks decoder tool).  Thus, when copying and pasting hyperlinks out of emails, you will want to replace the link target with the actual destination.  You can do this by first following the safelinks link, then copying and pasting that URL out of the web-browser into the page content you are writing.
 
-2. Microsoft Office and some other software often generates characters that may look like another character that's safe to use on webpages, like a quotation mark, or space, but is in fact some other goofy kind of character that won't work.
+2. Microsoft Office and some other software often generate characters that may look like another character that's safe to use on webpages, like a quotation mark, or space, but is in fact some other goofy kind of character that won't work.  The most common offenders are quotation marks and spacing characters.
 
 3. In the glory days of desktop computing, when you copied text from something, you were always copying plain-text, which was often safe to paste into a web-site as long as it didn't contain those funny Microsoft-only directed quotation marks.  Now however, you might actually be copying some kind-of formatted text, like HTML or Rich Text.  Pasting this into the visual editor in Red (or other applications) may produce unexpected results.  Windows, MacOS, and typical Linux Desktops generally offer an option to "paste as plaintext", which will paste only the text characters and not any formatting data.  This may sometimes be useful when copying and pasting content into Red's visual editor.
-
+   * On Windows the copy/paste shortcut for paste as plaintext is ctrl+shift+v
+   * On MacOS the copy/paste shortcut for paste as plaintext is option+command+shift+v
 
 
