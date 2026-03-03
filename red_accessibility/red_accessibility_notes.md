@@ -18,7 +18,7 @@ and when you are looking for an appropriate way to present information, you may 
 
 The way HTML structures content is by placing it between to tags.  For example ```<p>``` tags indicate a paragraph.  There are two tags one which "opens" an HTML element and another which "closes" that element.  (some tags, like the image tag are singular and do not need to be closed).  For example:
 
-```
+```html
 	<p>This is the first paragraph of text</p>
 	<p>This will be a second paragraph of text</p>
 
