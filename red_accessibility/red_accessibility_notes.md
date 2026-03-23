@@ -1,6 +1,10 @@
-# Writing Accessible Web Content using Red
+# Web Accessibility and UIC Red
 
-I would be happy to make an in-person or zoom presentation on this topic, and if this would be easier than going over this topic via a written document please let me know.
+## Red Accessiblity quick checklist
+
+1. Is the page structure (h1, h2, h3, ... section headings) good?  (even the hidden titles)
+2. Are my links good?
+3. Did I set good alt text for my images?
 
 ## Notes specific to Red
 
