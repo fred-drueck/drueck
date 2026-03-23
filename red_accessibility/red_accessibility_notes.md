@@ -1,8 +1,10 @@
 # Web Accessibility and UIC Red
 
+You may also want to read the [UIC Red Team's page component documentation](https://red.uic.edu/features/all-components/).
+
 ## Red Accessiblity quick checklist
 
-1. Is the page structure (h1, h2, h3, ... section headings) good?  (even the hidden titles)
+1. Is the page structure (h1, h2, h3, ... section headings) good?  (even the hidden (sub)titles?)
 2. Are my links good?
 3. Did I set good alt text for my images?
 
@@ -12,11 +14,7 @@ The "visual editor" for the page intro text does not offer all of the options of
 
 A personal pet-peeve I have with the design of Red is that it makes it appear as if you can write webpages while understanding *literally* nothing about HTML, which is, unfortunately, not true.  In order to avoid introducing accessibility issues (and to make the best use of the components available in Red) you actually have to know some basics about how HTML works and how you write accessible web pages.  You by no means have to be an expert, but you either have to know a Little bit about these topics or only make a very narrow scope of edits to pages.  When you are in doubt about how to best format information in Red so as to provide it in a way that is accessible, you can consult me, the Red team, or the BIC Digital Accessibility staff for assistance as necessary.  When in doubt, don't hesitate to ask for help!
 
-Red was designed with some opinions about how it would be used to generate and display content.  It is sometimes tempting to try and "pound a round peg into a square hole" so as to do something with a component in Red that it was not really intended to do by the Red design team.  While this might seem to work, it's likely that this might result in accessibility issues because Red components are either accessible when used as intended, or can at least likely be modified by the Red design team to be more accessible when accessibility issues are reported to them.  The red team provides documentation on their components at:
-
-https://red.uic.edu/features/all-components/
-
-and when you are looking for an appropriate way to present information, you may consult that list to see what component best fits your intended use case.
+Red was designed with some opinions about how it would be used to generate and display content.  It is sometimes tempting to try and "pound a round peg into a square hole" so as to do something with a component in Red that it was not really intended to do by the Red design team.  While this might seem to work, it's likely that this might result in accessibility issues because Red components are either accessible when used as intended, or can at least likely be modified by the Red design team to be more accessible when accessibility issues are reported to them.  The red team provides [documentation on red page components](https://red.uic.edu/features/all-components/) which you may consult to see what component best fits your intended use case.
 
 ## HTML tags
 
